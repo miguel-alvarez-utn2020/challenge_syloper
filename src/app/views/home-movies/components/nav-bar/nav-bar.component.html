@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-2">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand">Movies DB</a>
+
+    <!-- Boton para el menu movil -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#menu"
+      aria-controls="menu"
+      aria-expanded="false"
+      aria-label="Mostrar / Ocultar Menu"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu de navegacion -->
+    <div class="collapse navbar-collapse mb-2 justify-content-end" id="menu">
+      <div class="d-flex pt-2">
+        <form
+          #formulario="ngForm"
+          (ngSubmit)="onSubmit(formulario)"
+          class="d-flex pt-2"
+        >
+          <input
+            type="search"
+            class="form-control me-2"
+            placeholder="Buscar"
+            aria-label="Buscar"
+            name="search"
+            [(ngModel)]="search.termino"
+            [class]="getClass"
+          />
+          <button
+            class="btn btn-outline-light"
+            type="submit"
+            (click)="goToSearch(search.termino)"
+          >
+            Buscar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>

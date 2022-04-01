@@ -1,0 +1,53 @@
+<div class="row mt-5 mb-5">
+  <div class="col">
+    <div
+      class="carousel slide carousel-fade cursorPointer"
+      id="mi-carousel"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div
+          *ngFor="let movie of movies; let i = index"
+          class="carousel-item carousel-bg"
+          [ngClass]="{ active: i == 0 }"
+          data-bs-interval="5000"
+          [routerLink]="['/', 'detail-movie', movie.id]"
+          [ngStyle]="{
+            'background-image':
+              'url( https://images.ctfassets.net/hrltx12pl8hq/5KiKmVEsCQPMNrbOE6w0Ot/341c573752bf35cb969e21fcd279d3f9/hero-img_copy.jpg?fit=fill&w=800&h=300)'
+          }"
+        >
+          <div class="carousel-caption titulo">
+            <h5>{{ movie.original_title }}</h5>
+            <p>{{ movie.overview | slice: 0:100 }}...</p>
+          </div>
+          <img
+            class="img-fluid slide-poster d-block"
+            [src]="movie.poster_path | image"
+            alt="Responsive image"
+          />
+        </div>
+      </div>
+
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#mi-carousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#mi-carousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+</div>

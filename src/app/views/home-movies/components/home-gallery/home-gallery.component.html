@@ -1,0 +1,6 @@
+<section class="row flex-column flex-md-row justify-content-md-between">
+    <h2>Peliculas</h2><hr>
+  <div class="col col-md-6 col-lg-4 col-xl-3 mb-2" *ngFor="let movie of movies">
+    <app-card-movie [movie]="movie"></app-card-movie>
+  </div>
+</section>

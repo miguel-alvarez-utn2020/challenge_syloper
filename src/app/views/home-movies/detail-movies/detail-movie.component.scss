@@ -1,0 +1,23 @@
+.poster-detail {
+  width: 100%;
+  height: auto;
+}
+.magin {
+  margin: 0 auto;
+}
+.chip {
+  display: inline-block;
+}
+.gapActors {
+  gap: 10px;
+}
+.card-width {
+  width: 100%;
+}
+
+.body-content {
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
